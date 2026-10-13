@@ -1,10 +1,10 @@
 /* ===== 기본 설정 ===== */
 :root {
-  --bg: #faf8f3;        /* 오프화이트 배경 */
-  --bg-alt: #f1eee5;    /* 대체 배경 */
-  --navy: #1B3260;      /* 로고 네이비 (주 색상) */
+  --bg: #faf8f3;
+  --bg-alt: #f1eee5;
+  --navy: #1B3260;
   --navy-dark: #12234a;
-  --gold: #E0A030;      /* 로고 골드 (포인트) */
+  --gold: #E0A030;
   --text: #222;
   --muted: #666;
   --line: #ddd8c8;
@@ -50,12 +50,11 @@ h1, h2, h3 { color: var(--navy); }
 .nav-cta { color: #fff !important; background: var(--navy); padding: 6px 12px; border-radius: 6px; }
 .nav-cta:hover { background: var(--gold); color: var(--navy) !important; }
 
-/* 모바일: 일반 메뉴 숨기고 상담 버튼만 */
 @media (max-width: 640px) {
   .nav a:not(.nav-cta) { display: none; }
 }
 
-/* ===== 히어로 (로고를 배경으로 크게) ===== */
+/* ===== 히어로 (투명 PNG 로고) ===== */
 .hero {
   position: relative;
   overflow: hidden;
@@ -63,7 +62,7 @@ h1, h2, h3 { color: var(--navy); }
   background: linear-gradient(180deg, #faf8f3 0%, #f3efe4 100%);
 }
 
-/* 은은한 골드 원 장식 */
+/* 은은한 골드 빛 장식 */
 .hero::before {
   content: "";
   position: absolute;
@@ -85,18 +84,17 @@ h1, h2, h3 { color: var(--navy); }
 
 .hero-text { position: relative; z-index: 2; max-width: 560px; }
 
-/* 큰 로고 */
+/* 모바일: 글자 뒤에 은은하게 */
 .hero-logo {
   position: absolute;
   z-index: 1;
   top: 50%;
-  right: -60px;
-  width: 360px;
-  height: 360px;
+  right: -70px;
+  width: 340px;
+  height: 340px;
   transform: translateY(-50%);
-  background: url("../images/logo.jpg") center / contain no-repeat;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
+  background: url("../images/logo.png") center / contain no-repeat;
+  opacity: 0.14;               /* 모바일 진하기: 0.10~0.25 */
   pointer-events: none;
 }
 
@@ -104,19 +102,19 @@ h1, h2, h3 { color: var(--navy); }
 .hero h1 { font-size: 32px; line-height: 1.35; margin: 0 0 16px; }
 .lead { font-size: 17px; color: var(--muted); margin: 0 0 28px; }
 
-/* PC: 로고를 오른쪽에 선명하게 */
+/* PC: 오른쪽에 선명하게 */
 @media (min-width: 768px) {
-  .hero { padding: 110px 0 110px; }
+  .hero { padding: 100px 0 100px; }
   .hero h1 { font-size: 46px; }
 
   .hero-logo {
     position: relative;
     top: auto; right: auto;
     transform: none;
-    flex: 0 0 420px;
-    width: 420px;
-    height: 420px;
-    opacity: 0.9;               /* PC는 선명하게 */
+    flex: 0 0 440px;
+    width: 440px;
+    height: 440px;
+    opacity: 1;
   }
 }
 
@@ -155,7 +153,6 @@ h1, h2, h3 { color: var(--navy); }
   .cards { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* 맞춤 수업 카드: 모바일 1열, 태블릿 2열, PC 3열 */
 @media (min-width: 640px) {
   .cards-5 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -193,7 +190,6 @@ h1, h2, h3 { color: var(--navy); }
 .form-message.ok { color: #2e7d32; }
 .form-message.error { color: #b3261e; }
 
-/* 스팸 함정 칸 숨기기 */
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
 /* ===== FAQ ===== */
