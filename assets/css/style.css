@@ -111,3 +111,39 @@
   .footer { padding: 40px 0; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
   .footer p { margin: 4px 0; }
   
+  /* ===== 추가: 로고, 폼 확장, 카드 ===== */
+
+/* 로고 이미지 */
+.logo-link { display: flex; align-items: center; }
+.logo-img { height: 36px; width: auto; display: block; }
+
+/* 섹션 부제목 */
+.section-sub { color: var(--muted); margin: 0 0 8px; }
+.section p strong { color: var(--green); }
+
+/* 카드 안 보조 문구 */
+.card .meta { margin-top: 10px; font-size: 13px; color: var(--green); font-weight: 600; }
+
+/* 맞춤 수업 카드: 모바일 1열, 태블릿 2열, PC 3열 */
+@media (min-width: 640px) {
+  .cards-5 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .cards-5 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* 폼: 드롭다운, 체크박스 그룹 */
+.form select {
+  width: 100%; padding: 12px;
+  border: 1px solid var(--line); border-radius: 8px;
+  font-size: 16px; font-family: inherit; background: #fff;
+}
+.form select:focus { outline: 2px solid var(--green); border-color: var(--green); }
+
+.field-group {
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 14px 16px; margin: 0; background: #fff;
+  display: grid; gap: 10px;
+}
+.field-group legend { font-size: 15px; font-weight: 600; padding: 0 6px; }
+.field-group .check { font-weight: 400; }
