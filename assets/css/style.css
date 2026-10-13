@@ -1,0 +1,113 @@
+/* 기본 설정 */
+:root {
+    --bg: #faf8f3;        /* 오프화이트 배경 */
+    --bg-alt: #f1eee5;    /* 대체 배경 */
+    --green: #1f4d3a;     /* 딥그린 포인트 */
+    --green-dark: #163a2b;
+    --text: #222;
+    --muted: #666;
+    --line: #ddd8c8;
+  }
+  
+  * { box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    margin: 0;
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+  
+  a { color: var(--green); }
+  
+  .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  .narrow { max-width: 640px; }
+  
+  /* 헤더 */
+  .header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(250, 248, 243, 0.95);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .logo { font-weight: 700; font-size: 18px; text-decoration: none; color: var(--green); }
+  .nav { display: flex; gap: 16px; align-items: center; font-size: 14px; }
+  .nav a { text-decoration: none; color: var(--text); }
+  .nav-cta { color: #fff !important; background: var(--green); padding: 6px 12px; border-radius: 6px; }
+  
+  /* 모바일: 일반 메뉴 숨기고 상담 버튼만 */
+  @media (max-width: 640px) {
+    .nav a:not(.nav-cta) { display: none; }
+  }
+  
+  /* 히어로 */
+  .hero { padding: 80px 0 72px; }
+  .eyebrow { color: var(--green); font-weight: 600; font-size: 14px; margin: 0 0 12px; }
+  .hero h1 { font-size: 32px; line-height: 1.35; margin: 0 0 16px; }
+  .lead { font-size: 17px; color: var(--muted); margin: 0 0 28px; }
+  
+  @media (min-width: 768px) {
+    .hero { padding: 120px 0 104px; }
+    .hero h1 { font-size: 46px; }
+  }
+  
+  /* 버튼 */
+  .btn {
+    display: inline-block;
+    background: var(--green); color: #fff;
+    border: 0; border-radius: 8px;
+    padding: 14px 28px; font-size: 16px; font-weight: 600;
+    text-decoration: none; cursor: pointer; font-family: inherit;
+  }
+  .btn:hover { background: var(--green-dark); }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  
+  /* 섹션 */
+  .section { padding: 64px 0; }
+  .section-alt { background: var(--bg-alt); }
+  .section h2 { font-size: 26px; margin: 0 0 16px; }
+  .note { color: var(--muted); font-size: 14px; }
+  
+  /* 카드 */
+  .cards { display: grid; gap: 16px; margin-top: 24px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+  .card h3 { margin: 0 0 8px; color: var(--green); font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); }
+  
+  @media (min-width: 768px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  /* 폼 */
+  .form { display: grid; gap: 16px; margin-top: 24px; }
+  .form label { display: grid; gap: 6px; font-size: 15px; font-weight: 600; }
+  .form input[type="text"],
+  .form input[type="tel"],
+  .form textarea {
+    width: 100%; padding: 12px;
+    border: 1px solid var(--line); border-radius: 8px;
+    font-size: 16px; font-family: inherit; background: #fff;
+  }
+  .form input:focus, .form textarea:focus { outline: 2px solid var(--green); border-color: var(--green); }
+  .form .check { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; font-size: 14px; }
+  .form .check input { margin-top: 5px; }
+  .form-message { margin: 0; font-size: 15px; min-height: 24px; }
+  .form-message.ok { color: var(--green); }
+  .form-message.error { color: #b3261e; }
+  
+  /* 스팸 함정 칸 숨기기 */
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  
+  /* FAQ */
+  details { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-top: 10px; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { margin: 10px 0 0; color: var(--muted); }
+  
+  /* 푸터 */
+  .footer { padding: 40px 0; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+  .footer p { margin: 4px 0; }
+  

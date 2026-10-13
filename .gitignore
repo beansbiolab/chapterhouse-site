@@ -1,0 +1,15 @@
+﻿# 환경 변수, 비밀 값
+.env
+.env.*
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 에디터
+.vscode/
+.idea/
